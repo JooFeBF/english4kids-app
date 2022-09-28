@@ -1,0 +1,40 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #3338;
+  animation: modal-animation 6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.modal-info{
+  color: var(--alternative-text-color);
+  font-size: 6em;
+  font-family: var(--primary-font);
+  text-align: center;
+  padding: 0 60px;
+}
+@media (max-width: 900px){
+  .modal-info{
+    font-size: 3em;
+  }
+}
+@keyframes modal-animation {
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  90%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}

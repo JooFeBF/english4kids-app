@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+@font-face 
+{ 
+    font-family: 'singlet';  
+    src: url(../src/fonts/sniglet-regular.ttf); 
+}
+@font-face{
+    font-family: 'cabin';  
+    src: url(../src/fonts/cabin-variable-font.ttf);
+}
+
+:root{
+    --primary-color: #FFFA73;
+    --secondary-color: #222;
+    --alternative-text-color: #fafafa;
+    --primary-text-color: #222;
+    --secondary-text-color: #4b4b4b;
+    --primary-font: 'singlet';
+    --secondary-font: 'cabin';
+}
+
+body {
+  background-color: #fffa73;
+  margin: 0;
+  padding: 0;
+}
