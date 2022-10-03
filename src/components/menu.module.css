@@ -1,0 +1,91 @@
+.menu-container{
+  background-color: var(--alternative-text-color);
+  padding: 50px;
+  border: 4px solid var(--primary-text-color);
+  border-radius: 8px;
+  color: var(--primary-text-color);
+  display: flex;
+  flex-direction: column;
+}
+.menu-container > button{
+  font-size: .4em;
+  background-color: var(--primary-color);
+  border: 4px solid var(--primary-text-color);
+  padding: 5px 20px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+.menu-container > button:last-child{
+  background-color: #FF596A;
+}
+.warning-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.warning-container > header {
+  font-size: .2em;
+}
+.warning-container > p{
+  font-size: .1em;
+}
+.warning-container > button{
+  font-size: .1em;
+}
+.warning-container > div{
+  display: flex;
+}
+.warning-container > div > button{
+  width: 100px;
+  height: 100px;
+  border: 4px solid var(--primary-text-color);
+  background-color: #FF596A;
+  border-radius: 8px;
+  font-size: .1em;
+  padding: 5px;
+  margin: 0 40px;
+}
+.warning-container > div > a{
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: #59FF7F;
+  border: 4px solid var(--primary-text-color);
+  font-size: .1em;
+  margin: 0 40px;
+}
+.warning-container > div > button > svg{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  fill: #B32D3A;
+}
+.warning-container > div > a > svg{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  fill: #1BB33D;
+}
+.warning-container > a{
+  font-size: .1em;
+}
+@media (max-width: 800px){
+  .menu-container > button{
+    font-size: .3em;
+  }
+  .warning-container > header{
+    font-size: .3em;
+  }
+  .warning-container > p{
+    font-size: .2em;
+  }
+  .warning-container > div > a{
+    width: 60px;
+    height: 60px;
+  }
+  .warning-container > div > button{
+    width: 60px;
+    height: 60px;
+  }
+}

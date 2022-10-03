@@ -6,6 +6,10 @@
   height: 100vh;
 }
 .content-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
   width: 90%;
   height: 90%;
   border: 4px solid #333;

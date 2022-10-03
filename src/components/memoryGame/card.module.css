@@ -1,0 +1,159 @@
+.card-container{
+  display: flex;
+  width: 140px;
+  height: 140px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 4px solid var(--primary-text-color);
+  background: linear-gradient(-45deg, #ee6644, #ee9f44) ;
+  transition: transform .2s;
+}
+.card-container:has(button:hover){
+  transform: scale(1.1);
+}
+.card-container > img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+.card-blank-side{
+  border: 0;
+  outline: 0;
+  background-color: #fafafa;
+  color: #ee6644;
+  font-size: 6em;
+  font-family: var(--secondary-font);
+  width: 90%;
+  height: 90%;
+}
+.flipped-card-back{
+  animation: cardFlip 1s;
+}
+.flipped-card-front{
+  animation: cardFlipFront 1s;
+}
+.correct-card{
+  animation: correctCard .5s;
+}
+.incorrect-card{
+  animation: incorrectCard 1s;
+}
+.incorrect-card-front{
+  animation: incorrectCardFront 1s;
+}
+@media (max-width: 1200px){
+  .card-container{
+    width: 110px;
+    height: 110px;
+  }
+  .card-blank-side{
+    font-size: 5em;
+  }
+}
+@media (max-width: 800px){
+  .card-container{
+    width: 110px;
+    height: 110px;
+  }
+}
+@media (max-width: 550px){
+  .card-container{
+    width: 90px;
+    height: 90px;
+  }
+  .card-blank-side{
+    font-size: 3em;
+  }
+}
+@media (max-width: 400px) and (max-height: 730px){
+  .card-container{
+    width: 70px;
+    height: 70px;
+  }
+}
+@media (max-width: 300px) and (max-height: 730px){
+  .card-container{
+    width: 60px;
+    height: 60px;
+  }
+  .card-blank-side{
+    font-size: 2em;
+  }
+}
+
+@keyframes cardFlip{
+  0% {
+    transform: rotateY(0deg);
+  }
+  100%{
+    transform: rotateY(360deg);
+  }
+}
+@keyframes cardFlipFront {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  50.01%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes correctCard{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-10%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+@keyframes incorrectCard{
+  0%{
+    transform: rotateZ(0);
+  }
+  12.5%{
+    transform: rotateZ(20deg);
+  }
+  25%{
+    transform: rotateZ(-20deg);
+  }
+  37.5%{
+    transform: rotateZ(0deg);
+    transform: rotateY(0);
+  }
+  100%{
+    transform: rotateY(360deg);
+  }
+}
+@keyframes incorrectCardFront{
+  0%{
+    width: 90%;
+    height: 90%;
+    padding: 0;
+  }
+  37.5%{
+    width: 90%;
+    height: 90%;
+    padding: 0;
+  }
+  37.51%{
+    width: 0;
+    height: 0;
+    padding: 45%;
+    background: #fafafa;
+  }
+  100%{
+    width: 0;
+    height: 0;
+    padding: 45%;
+    background: #fafafa;
+  }
+}

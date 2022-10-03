@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import informationModal from './informationModal.module.css'
 
-const InformationModal = ({ children }) => {
-  const [openModal, setOpenModal] = useState(true)
+const InformationModal = ({ children, automaticallyCloses = true, isOpen }) => {
+  const [openModal, setOpenModal] = useState(automaticallyCloses)
 
   if (openModal) {
     setTimeout(() => {
@@ -12,9 +12,9 @@ const InformationModal = ({ children }) => {
   return (
     <>
       {
-        openModal
-          ? <div className={informationModal.container}>
-              <p className={informationModal['modal-info']}>{ children }</p>
+        openModal || isOpen
+          ? <div className={`${informationModal.container} ${automaticallyCloses ? `${informationModal['start-and-end-animation']}` : `${informationModal['start-only-animation']}`}`}>
+              <article className={informationModal['modal-info']}>{ children }</article>
             </div>
           : null
       }

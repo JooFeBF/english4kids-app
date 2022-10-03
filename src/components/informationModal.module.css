@@ -2,15 +2,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-items: center;
   position: absolute;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #3338;
+  background-color: #333a;
+}
+.start-and-end-animation{
   animation: modal-animation 6s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+.start-only-animation{
+  animation: openModal .5s;
 }
 .modal-info{
   color: var(--alternative-text-color);
@@ -22,6 +29,14 @@
 @media (max-width: 900px){
   .modal-info{
     font-size: 3em;
+  }
+}
+@keyframes openModal{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
   }
 }
 @keyframes modal-animation {

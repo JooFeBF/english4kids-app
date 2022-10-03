@@ -22,6 +22,7 @@
   font-size: 2em;
   font-family: var(--secondary-font);
   color: var(--secondary-text-color);
+  text-align: center;
 }
 .img-container{
   display: flex;
@@ -50,4 +51,16 @@
   font-size: 2em;
   color: var(--primary-text-color);
   background-color: var(--primary-color);
+}
+@media (max-width: 800px) {
+  .img-container{
+    width: 300px;
+    height: 300px;
+  }
+  .title{
+    font-size: 3em;
+  }
+  .subtitle{
+    font-size: 2em;
+  }
 }
