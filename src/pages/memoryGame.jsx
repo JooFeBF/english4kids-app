@@ -5,6 +5,7 @@ import memoryGame from './memoryGame.module.css'
 import NextLevelModal from '../components/nextLevelModal'
 import bars from '../assets/images/bars-solid.svg'
 import Menu from '../components/menu'
+import GameUI from '../components/gameUI'
 const initialCards = [
   'red-1', 'red-2', 'blue-1', 'blue-2', 'green-1', 'green-2',
   'dog-1', 'dog-2', 'cat-1', 'cat-2', 'elephant-1', 'elephant-2'
@@ -12,10 +13,11 @@ const initialCards = [
 
 const cards = initialCards.sort(() => Math.random() - 0.5)
 
-let totalScore = 1000
+let timeScore = 1000
+let pause = false
 
 const scoreByTime = setInterval(() => {
-  if (totalScore > 200) totalScore -= 100
+  if (timeScore > 0 && !pause) timeScore -= 100
 }, 25000)
 
 const MemoryGame = () => {
@@ -24,17 +26,21 @@ const MemoryGame = () => {
   const [incorrectFlippedCards, setIncorrectFlippedCards] = useState([])
   const [win, setWin] = useState(false)
   const [openMenu, setOpenMenu] = useState(false)
+  const [score, setScore] = useState(0)
 
   useEffect(() => {
     if (flippedCards.length === 2) {
       const comparisonCards = flippedCards.map(card => card.split('', card.length - 2).join(''))
       if (comparisonCards[0] === comparisonCards[1]) {
         setTimeout(() => {
+          setScore(prevScore => prevScore + 100)
           setPairs(prevPairs => [...prevPairs, ...flippedCards])
         }, 1000)
         setTimeout(() => {
           setFlippedCards([])
         }, 1500)
+        setTimeout(() => {
+        }, 6000)
       } else {
         setTimeout(() => {
           setIncorrectFlippedCards([...flippedCards])
@@ -48,9 +54,15 @@ const MemoryGame = () => {
   }, [flippedCards])
 
   useEffect(() => {
+    openMenu
+      ? pause = true
+      : pause = false
+  }, [openMenu])
+
+  useEffect(() => {
     if (pairs.length === initialCards.length) {
       clearInterval(scoreByTime)
-      window.localStorage.setItem('globalScore', totalScore.toString())
+      window.localStorage.setItem('globalScore', (timeScore + score).toString())
       setTimeout(() => {
         setWin(true)
       }, 7350)
@@ -60,14 +72,14 @@ const MemoryGame = () => {
   return (
     <GameContainer title={'Encuentra todas las parejas'} subtitle={'Haz click en las cartas y acaba rápido para mayor puntuación'} >
       {
-        win ? <NextLevelModal totalScore={totalScore}/> : null
+        win ? <NextLevelModal score={score} timeScore={timeScore} level={'zoo'}/> : null
       }
       {
         openMenu ? <Menu isOpen={openMenu} setOpenMenu={setOpenMenu}/> : null
       }
-      <div className={memoryGame['game-UI']}>
+      <GameUI>
         <div className={memoryGame.header}>
-            <p>Puntos {totalScore}</p>
+            <p>Puntos {score}</p>
             <button onClick={() => setOpenMenu(true)}><img src={bars} alt="menu" /></button>
         </div>
         <div className={memoryGame['card-container']}>
@@ -75,7 +87,7 @@ const MemoryGame = () => {
             cards.map(card => <Card key={card} name={card} setFlippedCards={setFlippedCards} flippedCards={flippedCards} pairs={pairs} incorrectFlippedCards={incorrectFlippedCards} />)
           }
         </div>
-      </div>
+      </GameUI>
     </GameContainer>
   )
 }

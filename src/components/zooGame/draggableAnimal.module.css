@@ -1,0 +1,7 @@
+.animals{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  user-select: none;
+}

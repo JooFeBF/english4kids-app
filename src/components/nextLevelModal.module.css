@@ -27,6 +27,13 @@
   font-family: var(--secondary-font);
   color: var(--secondary-text-color);
   font-size: .3em;
+  margin: 10px;
+}
+.container > b {
+  font-family: var(--secondary-font);
+  color: var(--secondary-text-color);
+  font-size: .3em;
+  margin: 10px;
 }
 
 @media (max-width: 800px){

@@ -1,0 +1,5 @@
+.drag-enter > p{
+  box-shadow: 0px 0px 20px #5552; 
+  transform: scale(1.2);
+  transition: all .1s;
+}
