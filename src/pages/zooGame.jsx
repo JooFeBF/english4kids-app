@@ -104,6 +104,19 @@ const ZooGame = () => {
   }
 
   useEffect(() => {
+    const script = document.createElement('script')
+
+    script.src =
+      '/src/scripts/DragDropTouch.js'
+
+    document.body.appendChild(script)
+
+    return () => {
+      document.body.removeChild(script)
+    }
+  }
+  , [])
+  useEffect(() => {
     if (round === 2 && returnedAnimals.length === animalsFirstRound.length) clearInterval(scoreByTime)
     if (returnedAnimals.length === animalsFirstRound.length && round === 1) {
       setReturnedAnimals([])
