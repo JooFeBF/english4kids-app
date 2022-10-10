@@ -148,6 +148,12 @@
   .elephants-place > p{
     font-size: 7vw;
   }
+  .monkeys-place > p{
+    font-size: 7vw;
+  }
+  .crocodiles-place > p{
+    font-size: 7vw;
+  }
 }
 @keyframes animalMovement {
   0%{

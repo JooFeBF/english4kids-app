@@ -34,6 +34,9 @@
 }
 @media (max-width: 500px){
   .container > p {
+    font-size: .7em;
+  }
+  .container > p:last-child{
     font-size: .5em;
   }
 }
