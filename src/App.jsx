@@ -5,11 +5,11 @@ import { Route } from 'wouter'
 import ZooGame from './pages/zooGame'
 function App () {
   return (
-    <>
+    <div>
       <Route path='/' component={Home} />
       <Route path='/game/memory' component={MemoryGame} />
       <Route path='/game/zoo' component={ZooGame}/>
-    </>
+    </div>
   )
 }
 
