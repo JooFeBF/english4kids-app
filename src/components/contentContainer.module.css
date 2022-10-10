@@ -17,9 +17,6 @@
   background-color: #fafafa;
 }
 @media (max-width: 800px){
-  .container{
-    height: -webkit-fill-available, 100vh;
-  }
   .content-container{
     width: 100%;
     height: 100%;
