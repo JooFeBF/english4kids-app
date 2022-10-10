@@ -12,7 +12,13 @@ import GameUI from '../components/gameUI'
 import DraggableAnimal from '../components/zooGame/draggableAnimal'
 import InformationModal from '../components/informationModal'
 import NextLevelModal from '../components/nextLevelModal'
+import { polyfill } from 'mobile-drag-drop'
 
+import { scrollBehaviourDragImageTranslateOverride } from 'mobile-drag-drop/scroll-behaviour'
+
+polyfill({
+  dragImageTranslateOverride: scrollBehaviourDragImageTranslateOverride
+})
 const animalsFirstRound = [
   {
     id: 'lion-1',
@@ -81,6 +87,7 @@ const handleDragLeave = (e) => {
 }
 
 const handleDragEnter = (e) => {
+  e.preventDefault()
   e.target.parentElement.classList.add('drag-enter')
 }
 const ZooGame = () => {
@@ -103,19 +110,6 @@ const ZooGame = () => {
     handleDragLeave(e)
   }
 
-  useEffect(() => {
-    const script = document.createElement('script')
-
-    script.src =
-      '/src/scripts/DragDropTouch.js'
-
-    document.body.appendChild(script)
-
-    return () => {
-      document.body.removeChild(script)
-    }
-  }
-  , [])
   useEffect(() => {
     if (round === 2 && returnedAnimals.length === animalsFirstRound.length) clearInterval(scoreByTime)
     if (returnedAnimals.length === animalsFirstRound.length && round === 1) {
