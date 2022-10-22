@@ -2,7 +2,15 @@ import { useRef, useEffect } from 'react'
 import draggableAnimal from './draggableAnimal.module.css'
 
 const handleDrag = (e) => {
+  console.log('dragging')
   e.dataTransfer.setData('text/plain', e.target.id)
+  if (e.target.style.opacity !== '0') {
+    e.target.style.opacity = '0.5'
+  }
+}
+
+const handleDragEnd = (e) => {
+  e.target.style.opacity = '1'
 }
 
 const getRandomSign = () => {
@@ -41,7 +49,7 @@ const DraggableAnimal = ({ id, img, returnedAnimals }) => {
     <>
     {
       !returnedAnimals.includes(id)
-        ? <img src={img} id={id} className={draggableAnimal.animals} onDragStart={handleDrag} ref={elementRef}/>
+        ? <img src={img} id={id} className={draggableAnimal.animals} onDragStart={handleDrag} ref={elementRef} onDragEnd={handleDragEnd}/>
         : null
     }
     </>

@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import GameContainer from '../components/gameContainer'
 import Menu from '../components/menu'
-import memoryGame from './memoryGame.module.css'
-import bars from '../assets/images/bars-solid.svg'
 import lion from '../assets/images/zooGame/lion.png'
 import elephant from '../assets/images/zooGame/elephant.png'
 import crocodile from '../assets/images/zooGame/crocodile.png'
@@ -12,13 +10,9 @@ import GameUI from '../components/gameUI'
 import DraggableAnimal from '../components/zooGame/draggableAnimal'
 import InformationModal from '../components/informationModal'
 import NextLevelModal from '../components/nextLevelModal'
-import { polyfill } from 'mobile-drag-drop'
 
-import { scrollBehaviourDragImageTranslateOverride } from 'mobile-drag-drop/scroll-behaviour'
+import GameNavBar from '../components/gameNavBar'
 
-polyfill({
-  dragImageTranslateOverride: scrollBehaviourDragImageTranslateOverride
-})
 const animalsFirstRound = [
   {
     id: 'lion-1',
@@ -119,6 +113,19 @@ const ZooGame = () => {
   }, [returnedAnimals])
 
   useEffect(() => {
+    const applyPolyfill = async () => {
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        const { polyfill } = await import('mobile-drag-drop')
+        const { scrollBehaviourDragImageTranslateOverride } = await import('mobile-drag-drop/scroll-behaviour')
+        polyfill({
+          dragImageTranslateOverride: scrollBehaviourDragImageTranslateOverride
+        })
+      }
+    }
+    applyPolyfill()
+  }, [])
+
+  useEffect(() => {
     openMenu
       ? pause = true
       : pause = false
@@ -136,10 +143,7 @@ const ZooGame = () => {
         returnedAnimals.length === animalsFirstRound.length && round === 2 ? <NextLevelModal score={score} timeScore={timeScore} level={'color'} /> : null
       }
       <GameUI>
-        <div className={memoryGame.header}>
-            <p>Puntos {score}</p>
-            <button onClick={() => setOpenMenu(true)}><img src={bars} alt="menu" /></button>
-        </div>
+        <GameNavBar score={score} setOpenMenu={setOpenMenu}/>
         <div className={zooGame['game-zone']}>
           {
             round === 1

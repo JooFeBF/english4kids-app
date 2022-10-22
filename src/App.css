@@ -1,5 +1,42 @@
-.drag-enter > p{
+.drag-enter > p {
   box-shadow: 0px 0px 20px #5552; 
   transform: scale(1.2);
   transition: all .1s;
+}
+
+.color-option {
+  display: flex;
+  width: 130px;
+  height: 130px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 4px solid var(--primary-text-color);
+  background: linear-gradient(-45deg, #ee6644, #ee9f44) ;
+  transition: transform .2s;
+  user-select: none;
+}
+.color-option > img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.color-option:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 1400px) {
+  .color-option {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .color-option {
+    width: 80px;
+    height: 80px;
+  }
 }

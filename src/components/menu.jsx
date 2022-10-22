@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'wouter'
 import InformationModal from './informationModal'
 import menu from './menu.module.css'
@@ -10,9 +10,6 @@ const Menu = ({ isOpen, setOpenMenu }) => {
     setWarning((prevWarning) => [!prevWarning[0], url])
     console.log(warning[1])
   }
-  useEffect(() => {
-    console.log(warning)
-  }, [warning])
   return (
     <InformationModal automaticallyCloses={false} isOpen={isOpen}>
       <div className={menu['menu-container']}>

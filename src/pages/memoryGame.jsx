@@ -3,9 +3,9 @@ import Card from '../components/memoryGame/card'
 import GameContainer from '../components/gameContainer'
 import memoryGame from './memoryGame.module.css'
 import NextLevelModal from '../components/nextLevelModal'
-import bars from '../assets/images/bars-solid.svg'
 import Menu from '../components/menu'
 import GameUI from '../components/gameUI'
+import GameNavBar from '../components/gameNavBar'
 const initialCards = [
   'red-1', 'red-2', 'blue-1', 'blue-2', 'green-1', 'green-2',
   'dog-1', 'dog-2', 'cat-1', 'cat-2', 'elephant-1', 'elephant-2'
@@ -78,10 +78,7 @@ const MemoryGame = () => {
         openMenu ? <Menu isOpen={openMenu} setOpenMenu={setOpenMenu}/> : null
       }
       <GameUI>
-        <div className={memoryGame.header}>
-            <p>Puntos {score}</p>
-            <button onClick={() => setOpenMenu(true)}><img src={bars} alt="menu" /></button>
-        </div>
+        <GameNavBar score={score} setOpenMenu={setOpenMenu}/>
         <div className={memoryGame['card-container']}>
           {
             cards.map(card => <Card key={card} name={card} setFlippedCards={setFlippedCards} flippedCards={flippedCards} pairs={pairs} incorrectFlippedCards={incorrectFlippedCards} />)

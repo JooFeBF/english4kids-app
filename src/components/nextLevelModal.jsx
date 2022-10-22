@@ -2,7 +2,7 @@ import InformationModal from './informationModal'
 import { Link } from 'wouter'
 import nextLevelModal from './nextLevelModal.module.css'
 
-const NextLevelModal = ({ timeScore, score, level }) => {
+const NextLevelModal = ({ timeScore, score, level = '' }) => {
   return (
     <InformationModal automaticallyCloses={false} isOpen={true}>
       <div className={nextLevelModal.container}>
