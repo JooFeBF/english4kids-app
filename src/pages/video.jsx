@@ -9,8 +9,8 @@ import arrowLeft from '../assets/images/arrow-left-solid.svg'
 import arrowRight from '../assets/images/arrow-right-solid.svg'
 
 const videos = {
-  zoo: '2ACIW8_r9hQ',
-  color: 'Fb6yOfeGRC0',
+  zoo: 'fEKgzeIqp-c',
+  color: 'WfL2Xc031tk',
   memory: 'JGThxgUIjY8'
 }
 

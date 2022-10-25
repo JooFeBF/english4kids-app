@@ -75,3 +75,48 @@
   background-color: var(--primary-color);
   text-decoration: none;
 }
+
+@media (max-width: 800px) {
+  .score-container > div > div {
+    width: 100px;
+    height: 100px;
+  }
+  .score-container > h4 {
+    font-size: 3em;
+  }
+  .score-container > p {
+    font-size: 2em;
+    margin: 20px 0;
+  
+  }
+  .score-container > a{
+    color: var(--primary-text-color);
+    font-size: 2em;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .score-container > div {
+    height: 40%;
+    width: 80%;
+    margin: 20px 0;
+  }
+  .score-container > div > div {
+    width: 70px;
+    height: 70px;
+  }
+  .score-container > h4 {
+    font-size: 2em;
+  }
+  .score-container > p {
+    font-size: 1em;
+    margin: 20px 0;
+  
+  }
+  .score-container > a{
+    color: var(--primary-text-color);
+    font-size: 1em;
+    padding: 10px;
+  }
+}

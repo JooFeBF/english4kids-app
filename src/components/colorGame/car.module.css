@@ -133,8 +133,8 @@
   .car-zone > div {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 150px);
-    width: 550px;
+    grid-template-rows: repeat(2, 120px);
+    width: 450px;
   }
 }
 @media (max-width: 900px){
