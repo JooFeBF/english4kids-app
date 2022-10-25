@@ -1,6 +1,6 @@
 import ContentContainer from '../components/contentContainer'
 import home from './home.module.css'
-import kid from '../assets/images/personaje.svg'
+import kid from '../assets/images/nino.svg'
 import { Link } from 'wouter'
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
         <div className={home['info-container']}>
           <h1 className={home.title}>English 4 Kids</h1>
           <h2 className={home.subtitle}>¡Aprendamos divirtiéndonos juntos!</h2>
-          <Link href="/game/memory" className={home.link}>Jugar</Link>
+          <Link href="/video/memory" className={home.link}>Jugar</Link>
         </div>
         <div className={home['img-container']}>
           <img src={kid} alt='kid'/>

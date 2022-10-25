@@ -18,12 +18,15 @@
 }
 .guide-container > div {
   display: flex;
-  justify-content: center;
   width: 100%;
+  align-items: center;
   justify-content: space-between;
 }
 .guide-container > div > p {
   margin: 0;
+  flex-grow: 1;
+  font-size: 100px;
+  padding-left: 100px;
 }
 .guide-container > div > div {
   display: flex;
@@ -51,17 +54,26 @@
     height: 70vh;
   }
   .guide-container > div > div > button{
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
+  }
+  .guide-container > div > p {
+    font-size: 60px;
+    padding-left: 60px;
   }
 }
 @media (max-width: 500px){
   .guide-container{
     width: 80vw;
-    height: 70vh;
+    height: 40vh;
+    padding: 20px;
   }
   .guide-container > div > div > button{
     width: 60px;
     height: 60px;
+  }
+  .guide-container > div > p {
+    font-size: 60px;
+    padding-left: 60px;
   }
 }

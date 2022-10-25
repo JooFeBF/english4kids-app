@@ -99,7 +99,7 @@ const ColorGame = () => {
         openGuide ? <Guide isOpen={openGuide} setOpenGuide={setOpenGuide} object={returnObjectAndImage().object} imgObject={returnObjectAndImage().image}/> : null
       }
       {
-        score === 4100 ? <NextLevelModal score={score} timeScore={timeScore}/> : null
+        score === 4100 ? <NextLevelModal score={score} timeScore={timeScore} actualLevel={3}/> : null
       }
       <GameUI>
         <GameNavBar score={score} setOpenMenu={setOpenMenu}/>

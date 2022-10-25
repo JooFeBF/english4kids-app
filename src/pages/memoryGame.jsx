@@ -62,7 +62,6 @@ const MemoryGame = () => {
   useEffect(() => {
     if (pairs.length === initialCards.length) {
       clearInterval(scoreByTime)
-      window.localStorage.setItem('globalScore', (timeScore + score).toString())
       setTimeout(() => {
         setWin(true)
       }, 7350)
@@ -72,7 +71,7 @@ const MemoryGame = () => {
   return (
     <GameContainer title={'Encuentra todas las parejas'} subtitle={'Haz click en las cartas y acaba rápido para mayor puntuación'} >
       {
-        win ? <NextLevelModal score={score} timeScore={timeScore} level={'zoo'}/> : null
+        win ? <NextLevelModal score={score} timeScore={timeScore} video={'zoo'} actualLevel={1}/> : null
       }
       {
         openMenu ? <Menu isOpen={openMenu} setOpenMenu={setOpenMenu}/> : null

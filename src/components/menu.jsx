@@ -8,7 +8,6 @@ const Menu = ({ isOpen, setOpenMenu }) => {
 
   const handleClick = (url) => {
     setWarning((prevWarning) => [!prevWarning[0], url])
-    console.log(warning[1])
   }
   return (
     <InformationModal automaticallyCloses={false} isOpen={isOpen}>

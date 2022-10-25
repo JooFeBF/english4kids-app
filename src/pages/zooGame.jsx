@@ -140,7 +140,7 @@ const ZooGame = () => {
         wrongAnimalAdvice ? <InformationModal>Ahi van los {wrongAnimalAdvice}</InformationModal> : null
       }
       {
-        returnedAnimals.length === animalsFirstRound.length && round === 2 ? <NextLevelModal score={score} timeScore={timeScore} level={'color'} /> : null
+        returnedAnimals.length === animalsFirstRound.length && round === 2 ? <NextLevelModal score={score} timeScore={timeScore} video={'color'} actualLevel={2}/> : null
       }
       <GameUI>
         <GameNavBar score={score} setOpenMenu={setOpenMenu}/>

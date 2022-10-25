@@ -9,6 +9,7 @@
 }
 .menu-container > button{
   font-size: .4em;
+  font-family: var(--primary-font);
   background-color: var(--primary-color);
   border: 4px solid var(--primary-text-color);
   padding: 5px 20px;
