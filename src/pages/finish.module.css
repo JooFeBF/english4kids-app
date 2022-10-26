@@ -76,7 +76,7 @@
   text-decoration: none;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 800px), (max-height: 900px) {
   .score-container > div > div {
     width: 100px;
     height: 100px;
