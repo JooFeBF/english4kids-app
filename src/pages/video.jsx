@@ -34,7 +34,7 @@ const Video = ({ link }) => {
         <div className={video['video-container']}>
           <iframe src={`https://www.youtube.com/embed/${videos[link]}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           <div>
-            <Link href={returnPreviousGame()}><a><img src={arrowLeft} alt="arrow-left" /></a></Link><Link className={video.link} href='/'>Mas videos</Link><Link href={`/game/${link}`}><a><img src={arrowRight} alt="arrowRight" /></a></Link>
+            <Link href={returnPreviousGame()}><a><img src={arrowLeft} alt="arrow-left" /></a></Link><Link className={video.link} href='https://english-4-kids.vercel.app/pages/videos.html'>Mas videos</Link><Link href={`/game/${link}`}><a><img src={arrowRight} alt="arrowRight" /></a></Link>
           </div>
         </div>
       </GameUI>
