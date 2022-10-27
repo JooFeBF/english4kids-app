@@ -18,7 +18,7 @@ let pause = false
 
 const scoreByTime = setInterval(() => {
   if (timeScore > 0 && !pause) timeScore -= 100
-}, 25000)
+}, 40000)
 
 const MemoryGame = () => {
   const [flippedCards, setFlippedCards] = useState([])

@@ -25,7 +25,7 @@ let pause = false
 
 const scoreByTime = setInterval(() => {
   if (timeScore > 0 && !pause) timeScore -= 100
-}, 25000)
+}, 30000)
 
 const ColorGame = () => {
   const [score, setScore] = useState(0)

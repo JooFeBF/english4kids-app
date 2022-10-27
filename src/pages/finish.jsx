@@ -21,8 +21,8 @@ const Finish = () => {
         <div className={finish['score-container']}>
           <div>
             <div className={finish.filled}></div>
-            <div className={totalScore >= 6700 ? `${finish.filled}` : null}></div>
-            <div className={totalScore >= 7300 ? `${finish.filled}` : null}></div>
+            <div className={totalScore >= 6800 ? `${finish.filled}` : null}></div>
+            <div className={totalScore >= 7200 ? `${finish.filled}` : null}></div>
           </div>
           <h4>¡Lo has logrado!</h4>
           <p>Tu puntuación es de:</p>
