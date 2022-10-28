@@ -52,4 +52,7 @@
     width: 80px;
     height: 80px;
   }
+  .color-name {
+    font-size: 1em;
+  }
 }
