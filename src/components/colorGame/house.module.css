@@ -17,7 +17,7 @@
 .house-zone > div > div {
   box-sizing: border-box;
   position: relative;
-  z-index: 1;
+  z-index: 0;
   margin: 0;
 }
 .house-roof-1-container{

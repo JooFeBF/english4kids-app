@@ -17,7 +17,7 @@
 .gift-zone > div > div {
   box-sizing: border-box;
   position: relative;
-  z-index: 1;
+  z-index: 0;
   margin: 0;
 }
 .gift-ribbon-1{

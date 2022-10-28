@@ -91,7 +91,7 @@ const ColorGame = () => {
   }
 
   return (
-    <GameContainer title={'¡Colorea!'} subtitle={'Pinta los siguientes objetos con la ayuda de la guía que encuentras abajo a la derecha'}>
+    <GameContainer title={'¡Colorea!'} subtitle={'Pinta los siguientes objectos con la ayuda de la guía que encuentras abajo a la derecha'}>
       {
         openMenu ? <Menu isOpen={openMenu} setOpenMenu={setOpenMenu}/> : null
       }
@@ -109,16 +109,20 @@ const ColorGame = () => {
           }
           <div className={colorGame['color-options-container']}>
             <div className={`${colorGame['color-option-red']} color-option`} onClick={() => handleColorChange('rgb(229, 1, 3)')} style={color === 'rgb(229, 1, 3)' ? { transform: 'translateY(-10%)' } : null }>
+              <p className={`${color === 'rgb(229, 1, 3)' ? `${colorGame['color-name-active']}` : null} ${colorGame['color-name']}`}>Red</p>
               <img src={red} alt="red-color" />
             </div>
             <div className={`${colorGame['color-option-green']} color-option`} onClick={() => handleColorChange('rgb(81, 222, 83)')} style={color === 'rgb(81, 222, 83)' ? { transform: 'translateY(-10%)' } : null }>
+              <p className={`${color === 'rgb(81, 222, 83)' ? `${colorGame['color-name-active']}` : null} ${colorGame['color-name']}`}>Green</p>
               <img src={green} alt="green-color" />
             </div>
             <div className={`${colorGame['color-option-blue']} color-option`} onClick={() => handleColorChange('rgb(13, 198, 252)')} style={color === 'rgb(13, 198, 252)' ? { transform: 'translateY(-10%)' } : null }>
+              <p className={`${color === 'rgb(13, 198, 252)' ? `${colorGame['color-name-active']}` : null} ${colorGame['color-name']}`}>Blue</p>
               <img src={blue} alt="blue-color" />
             </div>
             <div className={'color-option'} onClick={() => setOpenGuide(prevState => !prevState)}>
               <img src={questionMark} alt="questionMark"/>
+              <p className={colorGame['color-name']}>Ayuda</p>
             </div>
           </div>
         </div>
