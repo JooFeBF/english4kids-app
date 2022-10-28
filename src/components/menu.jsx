@@ -3,17 +3,22 @@ import { Link } from 'wouter'
 import InformationModal from './informationModal'
 import menu from './menu.module.css'
 
+const handleClickReset = () => {
+  window.location.reload()
+}
+
 const Menu = ({ isOpen, setOpenMenu }) => {
   const [warning, setWarning] = useState([false, '/'])
 
   const handleClick = (url) => {
     setWarning((prevWarning) => [!prevWarning[0], url])
   }
+ 
   return (
     <InformationModal automaticallyCloses={false} isOpen={isOpen}>
       <div className={menu['menu-container']}>
         <header>Menú</header>
-        <button onClick={handleClick}>Volver Atrás</button>
+        <button onClick={handleClickReset}>Reiniciar</button>
         <button onClick={() => handleClick('/')}>Volver al principio</button>
         <button onClick={() => setOpenMenu(false)}>Cerrar Menú</button>
       </div>
