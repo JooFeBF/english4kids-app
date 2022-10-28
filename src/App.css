@@ -25,6 +25,8 @@
 }
 .color-option:hover {
   transform: scale(1.1);
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 @media (max-width: 1400px) {
