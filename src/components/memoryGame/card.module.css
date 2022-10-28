@@ -16,6 +16,7 @@
   width: 90%;
   height: 90%;
   object-fit: contain;
+  user-select: none;
 }
 .card-blank-side{
   border: 0;
