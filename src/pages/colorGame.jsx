@@ -91,7 +91,7 @@ const ColorGame = () => {
   }
 
   return (
-    <GameContainer title={'¡Colorea!'} subtitle={'Pinta los siguientes objectos con la ayuda de la guía que encuentras abajo a la derecha'}>
+    <GameContainer title={'¡Colorea!'} subtitle={'Pinta los siguientes objetos con la ayuda de la guía que encuentras abajo a la derecha'}>
       {
         openMenu ? <Menu isOpen={openMenu} setOpenMenu={setOpenMenu}/> : null
       }
